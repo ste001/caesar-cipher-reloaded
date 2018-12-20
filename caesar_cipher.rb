@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/reloader'
+if development? require 'sinatra/reloader'
 
 def caesar_cipher(string, shift)
   return "" if string.nil?
