@@ -2,6 +2,7 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 def caesar_cipher(string, shift)
+  return "" if string.nil?
   cipher = ""
   string.split("").map{|x|
     x.each_char{|y|
@@ -27,5 +28,5 @@ end
 get '/' do
   @shift = params['shift']
   @phrase = caesar_cipher(params['phrase'], @shift.to_i)
-  erb :index, :locals => {:phrase => @phrase}
+  erb :index, :locals => {:phrase => @phrase, :shift => @shift}
 end
