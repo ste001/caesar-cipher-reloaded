@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Caesar Cipher</title>
+</head>
+
+<body>
+  <p>Insert the phrase to cipher and how many shifts you want to make</p>
+  <form>
+    <input type='text' name="phrase"/>
+    <input type='number' name="shift" placeholder="number of shifts"/>
+    <input type='submit' value="Cipher it!"/>
+  </form>
+  <% if phrase != "" %>
+    <p>The ciphered phrase is: <%= phrase %></p>
+  <% end %>
+</body>
+
+</html>

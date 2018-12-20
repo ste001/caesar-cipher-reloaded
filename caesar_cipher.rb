@@ -25,5 +25,7 @@ def caesar_cipher(string, shift)
 end
 
 get '/' do
-  "Hello World"
+  @shift = params['shift']
+  @phrase = caesar_cipher(params['phrase'], @shift.to_i)
+  erb :index, :locals => {:phrase => @phrase}
 end
